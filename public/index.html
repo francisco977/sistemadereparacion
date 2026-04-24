@@ -2,18 +2,84 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Reparaciones</title>
     <style>
         body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
-        form { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
-        input { display: block; margin: 10px 0; width: 100%; padding: 8px; }
-        table { width: 100%; background: white; border-collapse: collapse; }
-        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
-        .btn-wsp { background: #25d366; color: white; padding: 5px 10px; text-decoration: none; border-radius: 5px; }
+        
+        form { 
+            background: white; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin-bottom: 20px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+        }
+        
+        input { 
+            display: block; 
+            margin: 10px 0; 
+            width: 100%; 
+            padding: 8px; 
+            box-sizing: border-box; 
+        }
+        
+        table { 
+            width: 100%; 
+            background: white; 
+            border-collapse: collapse; 
+            border-radius: 8px; 
+            overflow: hidden; 
+        }
+        
+        th, td { padding: 12px; border: 1px solid #ddd; text-align: left; }
+        th { background-color: #eee; }
+
+        /* BOTÓN DE WHATSAPP (Verde) */
+        .btn-wsp { 
+            background-color: #25d366; 
+            color: white; 
+            padding: 6px 12px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        /* BOTÓN DE ELIMINAR (Rojo) */
+        .btn-delete {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+            font-weight: bold;
+        }
+
+        .btn-delete:hover {
+            background-color: #cc0000;
+        }
+        
+        button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
     <h2>Registro de Reparaciones</h2>
+    
     <form id="formReparacion">
         <input type="text" id="nombre" placeholder="Nombre completo" required>
         <input type="text" id="telefono" placeholder="Número de teléfono (ej: 549381...)" required>
@@ -31,7 +97,8 @@
                 <th>Acción</th>
             </tr>
         </thead>
-        <tbody id="tablaReparaciones"></tbody>
+        <tbody id="tablaReparaciones">
+            </tbody>
     </table>
 
     <script src="script.js"></script>
